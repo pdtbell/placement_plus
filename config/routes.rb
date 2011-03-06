@@ -1,6 +1,6 @@
 PlacementPlus::Application.routes.draw do
   
-  get "users/new"
+  resource :users # defines a full compliment of the rest architecture for the model users
 
   root :to => 'pages#home'
   
