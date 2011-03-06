@@ -1,10 +1,12 @@
 PlacementPlus::Application.routes.draw do
-  
-  resource :users # defines a full compliment of the rest architecture for the model users
-
-  root :to => 'pages#home'
+  resources :users # defines a full compliment of the rest architecture for the model users
   
   match '/signup',  :to => 'users#new'
+
+  root :to => 'pages#home'
+  match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
+
   
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
